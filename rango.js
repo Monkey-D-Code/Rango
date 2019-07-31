@@ -13,11 +13,12 @@ const DAM = require('./snippets/helper/DjangoAppModification');
 
 const option = process.argv[2];
 const argument = process.argv[3];
-DAM.createAppUrls('Sasuke');
+
 switch (option){
     case 'fill-static':
         if(typeof(argument) === 'undefined'){
-            console.log('Must enter an app name to fill the static');
+            const applist = AppList.obj();
+            console.log(applist)
         }else{
             
             // make a production build of the react app
@@ -36,18 +37,6 @@ switch (option){
             
         }
 
-        break;
-    case 'fill-template':
-        if(typeof(argument) === 'undefined'){
-            console.log('Enter a name for the new rango app')
-        }else{
-            const server_app_template_name = path.join(__dirname , 'templates' , `${argument.toLowerCase()}-ui` , `${argument.toLowerCase()}-ui.html`);
-            fs.writeFile(server_app_template_name , reactAppTemplate(argument) , (err)=>{
-                if(err) throw err;
-                console.log(`${argument.toLowerCase()}-ui.html created and django template of ${argument} app has been created`);
-            })
-        }
-        
         break;
     case 'new-app':
         if(typeof(argument) === 'undefined'){
@@ -74,6 +63,11 @@ switch (option){
 
                                     }else{
                                         console.log(`${argument.toLowerCase()}-ui folder is created in templates`);
+                                        const server_app_template_name = path.join(__dirname , 'templates' , `${argument.toLowerCase()}-ui` , `${argument.toLowerCase()}-ui.html`);
+                                        fs.writeFile(server_app_template_name , reactAppTemplate(argument) , (err)=>{
+                                            if(err) throw err;
+                                            console.log(`${argument.toLowerCase()}-ui.html , django template of ${argument} app has been created`);
+                                        })
                                     }
                                 })
                                 
@@ -103,9 +97,11 @@ switch (option){
                             }
                             else{console.log(err)}
                         }else{
-                            console.log('templates created successfully');
+                            console.log('static created successfully');
+                            
                         }
                     })
+                    DAM.createAppUrls(argument);
                     
                 })
                 exec(`npx create-react-app ${argument.toLowerCase()}-ui`,(err,stdout,stderr)=>{

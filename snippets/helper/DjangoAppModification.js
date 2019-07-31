@@ -20,7 +20,9 @@ module.exports = DjangoAppModification = {
 
     },
     updateViews : (appname)=>{
-
+        fs.readFile(path.join(__dirname , '../' , 'bin' , 'views_py.txt'),'utf8',(err,data)=>{
+            if(err) throw err;
+        })
 
     }
 }

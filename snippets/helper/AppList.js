@@ -50,6 +50,17 @@ module.exports = AppList = {
             }
         })
 
+    },
+    obj : ()=>{
+        fs.readFile(applist_json_dir ,'utf8' ,(e,data)=>{
+            if(e) throw e;
+            const data_obj = JSON.parse(data);
+            if(data_obj.length === 0){
+                throw 'There are no apps to djangofy !'
+            }
+            console.log(data_obj+ 'from object')
+            return data_obj;
+        })
     }
 
 }

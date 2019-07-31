@@ -1,0 +1,8 @@
+from django.views.generic import (
+    TemplateView,
+)
+from .models import *
+from .serializers import *
+
+class ${appname}View(TemplateView):
+    template_name = '${appname_s}-ui/${appname_s}-ui.html'

@@ -4,7 +4,9 @@
   "description": "React & Django Combination",
   "main": "rango.js",
   "scripts": {
-    "new-rongo-app": ""
+    "new": "node rango new-app",
+    "trash" : "node rango delete-app",
+    "djangofy" : "node rango fill-static"
   },
   "author": "Bodhisatwa Barma",
   "license": "MIT",
