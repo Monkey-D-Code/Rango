@@ -1,0 +1,14 @@
+{
+  "name": "rango",
+  "version": "1.0.0",
+  "description": "React & Django Combination",
+  "main": "rango.js",
+  "scripts": {
+    "new-rongo-app": ""
+  },
+  "author": "Bodhisatwa Barma",
+  "license": "MIT",
+  "dependencies": {
+    "rmdir": "^1.2.0"
+  }
+}
