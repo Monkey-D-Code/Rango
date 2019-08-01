@@ -22,7 +22,7 @@ module.exports = reactAppTemplate = (appname)=>{
         
         {% block content %}
             
-            <div id='${appname.toLowerCase()}'></div>
+            <div id='root'></div>
         
         {% endblock %}`
     );

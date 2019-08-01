@@ -4,12 +4,11 @@
   "description": "React & Django Combination",
   "main": "rango.js",
   "scripts": {
-    "new": "node rango new-app",
-    "trash": "node rango delete-app",
-    "activate": "node rango activate-virtualenv",
-    "djangofy": "node rango fill-static",
-    "setup": "node rango setup",
-    "django" : "python local_manage.py runserver"
+    "new": "node Rango new",
+    "trash": "node Rango trash",
+    "djangofy": "node Rango djangofy",
+    "setup": "node Rango setup",
+    "django": "python local_manage.py runserver"
   },
   "author": "Bodhisatwa Barma",
   "license": "MIT",
