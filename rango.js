@@ -9,22 +9,16 @@ const reactAppTemplate = require(path.join(__dirname,'snippets' , 'reactAppTempl
 // importing helper classes
 const AppList = require('./snippets/helper/AppList');
 const DAM = require('./snippets/helper/DjangoAppModification');
-
+const DPM = require('./snippets/helper/DjangoProjectModification');
 
 const option = process.argv[2];
 const argument = process.argv[3];
 
 switch (option){
-    case 'activate-virtualenv':
-        process.chdir(path.join(__dirname , '../' , 'Scripts'));
-        try{
-            exec('activate',(e,stdout,stderr)=>{
-                console.log(stdout);
-                console.log(stderr);
-            })
-        }catch(err){
-            console.log(err);
-        }
+    case 'setup':
+        DPM.localSettings();
+        DPM.localWsgi();
+        DPM.localManage();
         break;
     case 'fill-static':
         if(typeof(argument) === 'undefined'){

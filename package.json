@@ -6,8 +6,10 @@
   "scripts": {
     "new": "node rango new-app",
     "trash": "node rango delete-app",
-    "activate" : "node rango activate-virtualenv",
-    "djangofy": "node rango fill-static"
+    "activate": "node rango activate-virtualenv",
+    "djangofy": "node rango fill-static",
+    "setup": "node rango setup",
+    "django" : "python local_manage.py runserver"
   },
   "author": "Bodhisatwa Barma",
   "license": "MIT",
