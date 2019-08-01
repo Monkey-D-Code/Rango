@@ -3,5 +3,5 @@ from .views import *
 
 app_name = '${appname}'
 urlpatterns = [
-    path('',AccountsUiView.as_view(),name='${appname.toLowerCase()}'),
+    path('',${appname}UiView.as_view(),name='${appname.toLowerCase()}'),
 ]

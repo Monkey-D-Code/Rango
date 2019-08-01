@@ -5,8 +5,9 @@
   "main": "rango.js",
   "scripts": {
     "new": "node rango new-app",
-    "trash" : "node rango delete-app",
-    "djangofy" : "node rango fill-static"
+    "trash": "node rango delete-app",
+    "activate" : "node rango activate-virtualenv",
+    "djangofy": "node rango fill-static"
   },
   "author": "Bodhisatwa Barma",
   "license": "MIT",

@@ -22,6 +22,12 @@ module.exports = DjangoAppModification = {
     updateViews : (appname)=>{
         fs.readFile(path.join(__dirname , '../' , 'bin' , 'views_py.txt'),'utf8',(err,data)=>{
             if(err) throw err;
+            const django_app_dir = path.join(__dirname , '../','../',appname);
+            const file_code_py = data.replace('${appname}',`${appname}Ui`).replace('${appname_s}',appname.toLowerCase());
+            fs.writeFile(path.join(django_app_dir , 'views.py'),file_code_py , (err)=>{
+                if(err) throw err;
+                console.log(`Views.py is created with go to template view`);
+            })
         })
 
     }

@@ -15,6 +15,17 @@ const option = process.argv[2];
 const argument = process.argv[3];
 
 switch (option){
+    case 'activate-virtualenv':
+        process.chdir(path.join(__dirname , '../' , 'Scripts'));
+        try{
+            exec('activate',(e,stdout,stderr)=>{
+                console.log(stdout);
+                console.log(stderr);
+            })
+        }catch(err){
+            console.log(err);
+        }
+        break;
     case 'fill-static':
         if(typeof(argument) === 'undefined'){
             const applist = AppList.obj();
@@ -102,6 +113,7 @@ switch (option){
                         }
                     })
                     DAM.createAppUrls(argument);
+                    DAM.updateViews(argument);
                     
                 })
                 exec(`npx create-react-app ${argument.toLowerCase()}-ui`,(err,stdout,stderr)=>{
