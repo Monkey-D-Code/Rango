@@ -1,20 +1,3 @@
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATES_DIR = os.path.join(BASE_DIR , 'templates')
-STATIC_DIR = os.path.join(BASE_DIR , 'static')
-SECRET_KEY = 'xa6dh8)hmov2253v$8!#^)i*3k#78t1853kgek&h*kdvn_)5m+'
-DEBUG = True
-ALLOWED_HOSTS = []
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'widget_tweaks',
-]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

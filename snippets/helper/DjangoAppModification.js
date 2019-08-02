@@ -30,5 +30,34 @@ module.exports = DjangoAppModification = {
             })
         })
 
+    },
+    addToInstalledApps : (appname)=>{
+        const djangoProjectDir = path.join(__dirname , '../','../' , 'Rango');
+        fs.readFile(path.join(__dirname,'../','bin' , 'local_settings_py.txt'),'utf8',(err , data)=>{
+            if(err) throw err;
+            var opsys = process.platform;
+            if (opsys == "darwin") {
+                console.log(data.split("\n"));
+            } else if (opsys == "win32" || opsys == "win64") {
+                const settings_array = data.split("\r\n");
+                const regex_1 = /^INSTALLED_APPS*/
+                let string_index = false;
+                settings_array.forEach((line , index)=>{
+                    if(regex_1.test(line)){
+                        console.log(line);
+                        string_index = index;
+                    }
+                })
+                // check for end of installed_apps
+                const end_regex = /^]$/
+                let counter = string_index+1;
+                while(!end_regex.test(settings_array[counter])){counter++;}
+                console.log(counter);
+            } else if (opsys == "linux") {
+                console.log(data.split("\n"));
+            }
+            
+        })
+    
     }
 }

@@ -4,10 +4,10 @@
   "description": "React & Django Combination",
   "main": "rango.js",
   "scripts": {
-    "new": "node Rango new",
-    "trash": "node Rango trash",
-    "djangofy": "node Rango djangofy",
-    "setup": "node Rango setup",
+    "new": "node rango new",
+    "trash": "node rango trash",
+    "djangofy": "node rango djangofy",
+    "setup": "node rango setup",
     "django": "python local_manage.py runserver"
   },
   "author": "Bodhisatwa Barma",
