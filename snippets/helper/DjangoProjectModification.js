@@ -41,5 +41,30 @@ module.exports = DjangoProjectModification = {
         })
 
 
+    },
+    templatesDir : () =>{
+        const projectBaseDir = path.join(__dirname , '../','../');
+        fs.mkdir(path.join(projectBaseDir , 'templates'),(err)=>{
+            if(err) throw err;
+            console.log('Created templates directory');
+        })
+    },
+    staticDir : () =>{
+        const projectBaseDir = path.join(__dirname , '../','../');
+        fs.mkdir(path.join(projectBaseDir , 'static'),(err)=>{
+            if(err) throw err;
+            console.log('Created static directory');
+        })
+    },
+    createBaseHtml : ()=>{
+        const templates_dir = path.join(__dirname,'../','../','templates');
+        fs.readFile(path.join(bin_dir , 'Base_html.txt'),'utf8',(err,data)=>{
+            if(err) throw err;
+            fs.writeFile(path.join(templates_dir , 'Base.html'),data, (e)=>{
+                if(e) throw e;
+                console.log('Base.html is created in /templates/');
+            })
+        })
+        
     }
 }

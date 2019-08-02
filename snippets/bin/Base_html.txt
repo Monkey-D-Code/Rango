@@ -1,0 +1,19 @@
+ <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+
+	{% block title %}{% endblock %}
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    {% block react_build_css %}{% endblock %}
+  </head>
+  <body>
+	  
+	  {% block content %}{% endblock %}
+
+    {% block react_build_js %}{% endblock %}
+  </body>
+</html> 

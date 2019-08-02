@@ -14,6 +14,9 @@ switch(option){
         DPM.localSettings();
         DPM.localWsgi();
         DPM.localManage();
+        DPM.templatesDir();
+        DPM.staticDir();
+        DPM.createBaseHtml();
         break;
     case 'new':
         rangoapp.createRangoApp();
